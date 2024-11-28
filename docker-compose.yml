@@ -1,4 +1,3 @@
-version: '3'
 services:
 
   #PHP Service
@@ -62,10 +61,10 @@ services:
     image: phpmyadmin/phpmyadmin:5
     container_name: app_pma
     environment:
-      PMA_HOST: php_app_db
+      PMA_HOST: ${DB_HOST}
       PMA_PORT: 3306
       PMA_USER: root
-      PMA_PASSWORD: root
+      PMA_PASSWORD: ${DB_PASSWORD}
       UPLOAD_LIMIT: 20M
     ports:
       - "8080:80"
